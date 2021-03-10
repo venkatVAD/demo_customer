@@ -1,0 +1,26 @@
+<launch>
+
+  <!-- CAN realated  -->
+  <arg name="baudrate" default='1000000' />
+  <arg name="channel" default="vcan0" />
+
+  <arg name="channel_can" default="vcan0" />
+
+  <param name="/baudrate"  value="$(arg baudrate)" /> 
+
+  <param name='/channel_can' value="$(arg channel) "/>
+
+  <param name ='/bustype' value='socketcan'/>
+  <param name='/arbitration_id' value='0x188'/>
+
+    <!-- end of CAN related -->
+
+  <node name="command_watchdog" pkg="demo_customer" type="zero.py" output="screen" />
+  <node name="mobile_subscriber" pkg="demo_customer" type="steering.py" output="screen" />
+
+  <node name="subsciber_for_mobile" pkg="demo_customer" type="ros_mobile_can.py" output="screen" />
+
+  <node pkg='turtlesim' type='turtlesim_node' name='turtlesim_node'/>
+
+</launch>
+

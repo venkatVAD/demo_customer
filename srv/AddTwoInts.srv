@@ -1,0 +1,4 @@
+float64 prev
+float64 current
+---
+string status
