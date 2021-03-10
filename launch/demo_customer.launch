@@ -2,9 +2,9 @@
 
   <!-- CAN realated  -->
   <arg name="baudrate" default='1000000' />
-  <arg name="channel" default="vcan0" />
+  <arg name="channel" default="can0" />
 
-  <arg name="channel_can" default="vcan0" />
+  <arg name="channel_can" default="can0" />
 
   <param name="/baudrate"  value="$(arg baudrate)" /> 
 
